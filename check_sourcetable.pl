@@ -22,8 +22,7 @@ my $sourcetable = $ARGV[0];
 die "! Error: cannot find sourcetable" if (! $sourcetable);
 my $geoJSON = "/Users/ryan/Dropbox/Public/mount_status.json";
 
-my $second_server = "http://192.104.43.27:2101";
-my $first_server = "http://192.104.43.25:2101";
+my $ntripserver = $ARGV[1]; 
 
 ### Variables
 #
@@ -69,7 +68,7 @@ while (<SOURCE>) {
   }
 }
 
-my $contents = get($second_server) or print "server not up\n"; 
+my $contents = get($server) or print "server not up\n"; 
 if ($contents) {
 for (split /^/, $contents) {
 
