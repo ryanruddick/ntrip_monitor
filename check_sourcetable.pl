@@ -68,7 +68,7 @@ while (<SOURCE>) {
   }
 }
 
-my $contents = get($server) or print "server not up\n"; 
+my $contents = get($ntripserver) or print "server not up\n"; 
 if ($contents) {
 for (split /^/, $contents) {
 
